@@ -1,0 +1,64 @@
+a
+c
+f
+c a f
+
+Updated graph:
+a --> b cap 7, flow 0
+b --> d cap 6, flow 0
+c --> a cap 6, flow -6
+c --> f cap 3, flow 6
+d --> e cap 3, flow 0
+d --> f cap 4, flow 0
+e --> c cap 2, flow 0
+f --> c cap 6, flow -6
+
+a
+b
+d
+f
+d b a f
+
+Updated graph:
+a --> b cap 3, flow 4
+b --> a cap 4, flow -4
+b --> d cap 2, flow 4
+c --> a cap 6, flow -6
+c --> f cap 3, flow 6
+d --> b cap 4, flow -4
+d --> e cap 3, flow 0
+e --> c cap 2, flow 0
+f --> c cap 6, flow -6
+f --> d cap 4, flow -4
+
+a
+b
+d
+e
+c
+f
+c e d b a f
+
+Updated graph:
+a --> b cap 1, flow 6
+b --> a cap 6, flow -6
+c --> a cap 6, flow -6
+c --> e cap 2, flow -2
+c --> f cap 1, flow 8
+d --> b cap 6, flow -6
+d --> e cap 1, flow 2
+e --> d cap 2, flow -2
+f --> c cap 8, flow -8
+f --> d cap 4, flow -4
+
+a
+b
+final result:
+12
+a b 6
+a c 6
+b d 6
+c f 8
+d e 2
+d f 4
+e c 2

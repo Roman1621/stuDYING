@@ -1,0 +1,34 @@
+link(rel= "stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css", integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi", crossorigin="anonymous")
+link(rel="stylesheet", href="/css/info.css", type="text/css")
+script(type="text/javascript", src="/public/jquery.js")
+script(type="text/javascript", src="/public/jquery-ui.js")
+
+html
+    head
+        meta(charset="utf-8")
+        title Info About User
+    body
+        div(class="user_panel")
+            table(class="info_table" id="info_table_id")
+                //tr
+                //    td(class="info_table_photo")
+                //        b Photo
+                //    td(class="info_table_name")
+                //        b Username
+        div(class="action_panel")
+            button(class="return_button" onclick="window.location = '/'; return false;") &nbsp;Return&nbsp;
+        div(class="friends_list")
+            table(class="friend_table" id="friend_table_id" border=1)
+                tr
+                    td(class="table_photo")
+                        b Photo
+                    td(class="table_name")
+                        b Username
+                    td(class="table_mail")
+                        b Mail
+                    td(class="table_birth")
+                        b Birth date
+                    td(class="table_status")
+                        b Status
+                    td(class="table_role")
+                        b Role

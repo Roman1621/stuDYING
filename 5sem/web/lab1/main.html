@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Tetris</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    </head>
+    <style type="text/css">
+        body{
+            background-image: url("mountains-background-game-vector.jpg");
+            background-size: 100% auto;
+        }
+        button{
+            background-color: aqua;
+            color: black;
+            font-weight: bold;
+            width: 16%;
+            height: 50px;
+            font-size:100%;
+            border-width: 10px;
+            border-style: double;
+            border-color: black;
+            text-emphasis-color: black;
+        }
+        #table{
+            border: 2px solid black;
+            width: 600px;
+        }
+        td,th{
+            border: 2px solid black;
+        }
+    </style>
+    <body>
+        <div id="root">
+        <h1>
+            <center><span style="color: black">Tetris</span></center>
+        </h1>
+        </div>
+        <div class="table" align="center">
+            <table class="tableOfResults">
+            <caption>Таблица рекордов</caption>
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Игрок</th>
+                    <th>Счет</th>
+                </tr>	
+            </thead>
+            <tbody id="results">
+            </tbody>
+            </table>
+        <form name="input_window" id="input">
+            <p><b>Ваше имя:</b><br>
+            <input type="text" size="40" id = "playername"></p>
+            <button onclick="login(); return false ", id="start">Play</button>
+        </form>
+        </div>
+    <script type="text/javascript" src="/leader_board.js"></script>
+    </body>
+</html>

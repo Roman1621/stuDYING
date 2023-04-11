@@ -1,0 +1,33 @@
+<div class="return_to_main_page">
+  <button class="button_return" (click)="return_to_main()">Return</button>
+</div>
+
+<div class="user_news_photo">
+  <table class="user_news_table">
+    <tr>
+      <td><img [src]=photo_user_url class="pfp_image"></td>
+    </tr>
+  </table>
+</div>
+
+<div class="add_news">
+  <p><input class="news_name_input" placeholder="news_name" [(ngModel)] = "news_name"></p>
+  <p><input class="news_body_input" placeholder="news_body" [(ngModel)] = "news_body"></p>
+  <button class="update_news_list" (click)="add_news()">Add</button>
+</div>
+
+<div class="news">
+  <table class="news_table">
+    <tr>
+      <td>Username</td>
+      <td>Title</td>
+      <td>News</td>
+    </tr>
+    <tbody *ngFor="let n of news_list; let i = index">
+    <tr>
+      <td class="news_header">{{n.user_name}}</td><td>{{n.news_name}}</td>
+      <td class="news_body" colspan=3 >{{n.news_body}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

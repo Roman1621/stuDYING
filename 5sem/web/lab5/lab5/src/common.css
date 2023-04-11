@@ -1,0 +1,30 @@
+.action_pane {
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	padding-bottom: 2vh;
+	width: 96vw;
+	height: 2vh;
+	background-color: transparent;
+	padding-left: 1vw;
+	font-weight: bold;
+	color: white;
+}
+.action_button {
+	margin-top: 0.5vh;
+	margin-right: 0.5vw;
+	height: 3vh;
+	font-size: 2vh;
+	background-color: transparent;
+	display: inline-block;
+	color: white;
+	border-radius: 5px;
+}
+
+.action_input {
+	margin-left: 0.5vw;
+	margin-right: 0.5vw;
+	font-size: 2vh;
+}
+.action_radio {
+	transform: scale(1.5);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "RawMan",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/animations": "^15.0.1",
+    "@angular/common": "^15.0.1",
+    "@angular/forms": "^15.0.1",
+    "@angular/material": "^15.0.0",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "formidable": "^2.0.1",
+    "jest": "^29.3.1",
+    "socket.io": "^4.5.4"
+  },
+  "jest": { "testPathIgnorePatterns": [
+    "my-lab"
+  ] }
+}

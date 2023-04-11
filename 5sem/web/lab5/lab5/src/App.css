@@ -1,0 +1,23 @@
+body{
+	/*background-color: black;*/
+	background: radial-gradient(white, black) no-repeat;
+	min-height: 100vh;
+	color: white;
+}
+.menu_pane {
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	padding-bottom: 2vh;
+	width: 97vw;
+	height: 3vh;
+	border-radius: 5px;
+}
+.menu_button {
+	background-color: transparent;
+	margin: 1px;
+	height: auto;
+	width: 33%;
+	font-size: 2.5vh;
+	color: white;
+	border-radius: 5px;
+}

@@ -1,0 +1,25 @@
+button{
+    color: white;
+    font-weight: bold;
+    width: 16%;
+    height: 50px;
+    font-size:100%;
+    border-width: 10px;
+    border-style: double;
+    background-image: url("../assets/back.png");
+    border-color: white;
+    text-emphasis-color: white;
+}
+.tableOfResults{
+    border: 2px solid white;
+    width: 600px;
+    color: white;
+    text-emphasis-color: white;
+}
+td,th{
+    border: 2px solid white;
+}
+body{
+    color: white;
+    background-image: url("../assets/back.png");
+}

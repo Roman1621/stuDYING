@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tetris</title>
+        <link rel="shortcut icon" href="#">
+    </head>
+    <style>
+    canvas {
+        border-width: 10px;
+        border-style: double;
+        border-color: 'black';
+    }
+    body{
+        margin: 0px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 100vh;
+        background-image: url("mountains-background-game-vector.jpg");
+        background-size: 100% auto;
+    }
+    /* .grid{
+        display: grid;
+        grid-template-columns: 400px 400px;
+    } */
+    /* .right_column{
+        position: absolute;
+        left: 700px;
+        top: 100px;
+    } */
+    button{
+        background-color: aqua;
+        border-color: black;
+        text-emphasis-color: black;
+    }
+    .control{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-width: 10px;
+        border-style: double;
+        border-color: 'black';
+        border-color: black;
+    }
+    </style>
+    <body>
+        <div class="grid">
+        <canvas id="board" width="650" height="800"></canvas> 
+        </div>
+        <div class="right_column">
+            <p><b>Player: <span id="player"></span></b></p>
+            <p><b>Score: <span id="score">0</span></b></p>
+            <p><b>Level: <span id="level">0</span></b></p>
+            <canvas id="next_figure" width="300" height="300"></canvas>
+            <p><button onclick="play()", id="play">P2P</button></p>
+            <div class="control"><p><b>Клавиши для управления:</b></p>
+			<ul>
+				<li>Стрелка влево: перемещение фигуры влево</li>
+				<li>Стрелка вправо: перемещение фигуры вправо</li>
+				<li>Стрелка вниз/Пробел: "уронить" фигуру</li>
+				<li>Стрелка вверх: повернуть фигуру</li>
+			</ul>
+        </div>
+        </div>
+    <script type="text/javascript" src="/tetris.js"></script>
+    </body>
+</html>

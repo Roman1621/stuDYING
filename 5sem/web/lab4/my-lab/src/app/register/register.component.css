@@ -1,0 +1,62 @@
+.register{
+  width: 600px;
+  height: auto;
+  border-width: 5px;
+  border-style: double;
+  border-color: rgba(0, 255, 255);
+  font-style: italic;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+p { margin:5px }
+.pass_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.mail_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.name_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.birth_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.register_button{
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 255, 255);
+}

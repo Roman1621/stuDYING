@@ -1,0 +1,77 @@
+{"player": {
+  "src": "spritesheet_7.png",
+  "sx": 306,
+  "sy": 0,
+  "sw": 84,
+  "sh": 92
+},
+"enemy_light": {
+  "src": "spritesheet_7.png",
+  "sx": 494,
+  "sy": 0,
+  "sw": 76,
+  "sh": 92
+},
+"enemy_heavy": {
+  "src": "spritesheet_7.png",
+  "sx": 202,
+  "sy": 0,
+  "sw": 104,
+  "sh": 104
+},
+"object_heal": {
+  "src": "spritesheet_7.png",
+  "sx": 0,
+  "sy": 0,
+  "sw": 40,
+  "sh": 56
+},
+"boss": {
+  "src": "spritesheet_7.png",
+  "sx": 390,
+  "sy": 0,
+  "sw": 104,
+  "sh": 120
+},
+"boom": {
+  "src": "spritesheet_7.png",
+  "sx": 56,
+  "sy": 0,
+  "sw": 114,
+  "sh": 112
+},
+"bulletPlayer": {
+  "src": "spritesheet_7.png",
+  "sx": 40,
+  "sy": 0,
+  "sw": 16,
+  "sh": 28
+},
+"shot": {
+  "src": "spritesheet_7.png",
+  "sx": 170,
+  "sy": 0,
+  "sw": 32,
+  "sh": 56
+},
+"bulletLight": {
+  "src": "spritesheet_7.png",
+  "sx": 586,
+  "sy": 0,
+  "sw": 24,
+  "sh": 32
+},
+  "bulletHeavy": {
+    "src": "spritesheet_7.png",
+    "sx": 586,
+    "sy": 0,
+    "sw": 24,
+    "sh": 32
+  },
+"bulletBoss": {
+  "src": "spritesheet_7.png",
+  "sx": 570,
+  "sy": 0,
+  "sw": 16,
+  "sh": 36
+}}

@@ -1,0 +1,78 @@
+link(rel="stylesheet", href="/css/info.css", type="text/css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ", type="text/css")
+
+html
+    head
+        meta(charset="utf-8")
+        title Книги для успешного успеха
+    body
+        div(class="action_info_panel")
+            button(class="action_button" onclick="open_edit(); return false;")
+                div(class="fa fa-pencil") &nbsp;Edit
+            button(class="action_button" onclick="give(); return false;")
+                div(class="fa fa-hand-paper-o") &nbsp;Issue
+            button(class="action_button")
+                div(class="fa fa-repeat" onclick="reader(); return false;") &nbsp;Return
+            button(class="action_button" onclick="go_back(); return false;")
+                div(class="fa fa-arrow-left") &nbsp;Back
+        div(class="book_info_panel")
+            table(class="book_info_table")
+                tr
+                    td
+                        bp Title
+                    td(id="title_info") !{book.title}
+                tr
+                    td
+                        bp Author
+                    td(id="author_info") !{book.author}
+                tr
+                    td
+                        bp Release
+                    td(id="release_info") !{book.release}
+                if book.availability
+                    tr
+                        td
+                            bp Availability
+                        td(id="availability_info") Yes
+                    tr
+                        td
+                            bp Current_reader
+                        td(id="cur_reader_info") A book in the library
+                    tr
+                        td
+                            bp Return_date
+                        td(id="return_date_info") No
+                else
+                    tr
+                        td
+                            bp Availability
+                        td(id="available_info") Unavailable
+                    tr
+                        td
+                            bp Current_reader
+                        td(id="cur_reader_info") !{book.cur_reader}
+                    tr
+                        td
+                            bp Return_date
+                        td(id="return_date_info") !{book.return_date}
+    dialog(id="edit_dialog", class="edit")
+        form(method="dialog")
+            div Title:&nbsp;
+            input(type="text" class="edit_dialog_text" id="title_textbox")
+            br
+            div Author:&nbsp;
+            input(type="text" class="edit_dialog_text" id="author_textbox")
+            br
+            div Release:&nbsp;
+            input(type="text" class="edit_dialog_text" id="release_textbox")
+            br
+            div Reader name:&nbsp;
+            input(type="text" class="edit_dialog_text" id="reader_textbox")
+            br
+            div Return date:&nbsp;
+            input(type="date" class="edit_dialog_text" id="return_textbox")
+            br
+            button(class="edit_dialog_button" onclick="edit(); return false;") &nbsp;Save
+            button(class="edit_dialog_button" onclick="cancel(); return false;") &nbsp;Cancel
+
+script(type="text/javascript", src="/js/info.js")

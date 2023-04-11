@@ -1,0 +1,15 @@
+.exchange_info_pane {
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	font-size: 3vh;
+}
+table {
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	width: 97vw;
+	font-size: 3vh;
+	border: none;
+}
+td{
+	border: none;
+}

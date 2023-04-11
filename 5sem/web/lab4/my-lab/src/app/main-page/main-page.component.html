@@ -1,0 +1,29 @@
+<div class="user_photo">
+  <table class="user_photo_table">
+    <tr>
+      <td><img [src]=photo_user_url class="pfp_image"></td>
+      <td>Change photo:<br>
+        <input type="file" class="photo_input_button" id="pfp_file_select" (change)="select_photo_file($event)"><br>
+        <button class="photo_upload_button" (click)="upload_photo()">Upload</button>
+    </tr>
+  </table>
+</div>
+
+<div class="user_info">
+  <table class="user_info_table">
+    <tr>
+      <td>{{name}}</td>
+      <td>{{mail}}</td>
+      <td>{{birth}}</td>
+      <td>{{status}}</td>
+      <td>{{role}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="user_navigation">
+  <nav>
+    <p><a routerLink="../news" class="nav_button_news">News</a></p>
+    <p><a *ngIf="is_admin" href="https://localhost:3000" class="nav_button_admin">Admin Panel</a></p>
+  </nav>
+</div>

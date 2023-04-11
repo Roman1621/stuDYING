@@ -1,0 +1,12 @@
+a e z
+a b 1
+a d 10
+a c 2
+b d 3
+b f 15
+d f 16
+d y 9
+c d 5
+c y 10
+f e 1
+y z 1

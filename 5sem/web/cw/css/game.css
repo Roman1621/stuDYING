@@ -1,0 +1,19 @@
+.user_result{
+    margin-top: 30px;
+    border: 5px double white;
+    width: 800px;
+    display: grid;
+    border-radius: 5px;
+    color: white;
+}
+.user_result_table{
+    width: 100%;
+}
+body{
+    background-image: url("../assets/back.png");
+}
+#canvasID{
+    margin-top: 30px;
+    border: 5px double white;
+    border-radius: 5px;
+}

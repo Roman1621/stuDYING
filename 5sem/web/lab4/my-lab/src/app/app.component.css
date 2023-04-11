@@ -1,0 +1,70 @@
+body{
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 255, 0.6), rgba(0, 255, 255, 0.6)) no-repeat;
+}
+app-root{
+  padding: 0;
+  margin: 0;
+}
+.panel{
+  background: linear-gradient(rgba(0, 0, 255, 0.6), rgba(0, 255, 255, 0.6)) no-repeat;
+  padding: 2.5%;
+  min-height: 90vh;
+  min-width: 90vw;
+}
+.login_on_main{
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  size: auto;
+  background-color: rgba(0, 255, 255);
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+}
+p { margin:5px }
+.navigation{
+  width: 600px;
+  height: 150px;
+  //align-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-width: 5px;
+  border-style: double;
+  border-color: rgba(0, 255, 255);
+  font-size: 32px;
+  font-style: italic;
+  border-radius: 5px;
+}
+.nav_button_login{
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  size: auto;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.nav_button_reg{
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+}

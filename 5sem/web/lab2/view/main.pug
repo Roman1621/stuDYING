@@ -1,0 +1,61 @@
+link(rel="stylesheet", href="/css/main.css", type="text/css")
+link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ", type="text/css")
+
+html
+    head
+        meta(charset="utf-8")
+        title Книги для успешного успеха
+    body
+        div(class="title_panel")
+            div(class="descript") Library REST-app
+            div(class="image")
+                img(src='/css/icon.png')
+        div(class="action_panel")
+            button(class="action_button" onclick="update(); return false;")
+                div(class="fa fa-filter") &nbsp;Filter
+            select(class="action_button" id="filter_select" onclick="change_filter(); return false;")
+                option(value="none") No filter
+                option(value="return_date") Return_date
+                option(value="availability") Available
+                option(value="unavailable") Unavailable
+            input(type="hidden" class="action_button" id="filter_input")
+            button(class="action_button")
+                div(class="fa fa-plus" onclick="add_book(); return false;") &nbsp;Add
+            button(class="action_button")
+                div(class="fa fa-minus" onclick="open_remove_confirm_dialog(); return false;") &nbsp;Delete
+            button(class="action_button")
+                div(class="fa fa-pencil" onclick="edit_book(); return false;") &nbsp;Edit
+        div(class="book_list_panel")
+            each elem, i in local.books
+                if !filter || filter == "none" || (filter == "availability" && elem.availability) || (filter == "unavailable" && !elem.availability) || (filter == "return_date" && elem.return_date <= filter_value)
+                    div(class="book_info")
+                        table(class="book_info_table", style='cellpadding: \'0\'')
+                            tr
+                                td
+                                td Title
+                                td Author
+                                td Release
+                                td Available
+                                td Reader
+                                td Return_date
+                            tr
+                                td(class="book_info_table_td")
+                                    input(type="checkbox", class="book_info_table_td", id="cur_book_" + elem.id)
+                                td !{elem.title}
+                                td !{elem.author}
+                                td !{elem.release}
+                                if elem.availability
+                                    td Yes
+                                    td A book in the library
+                                    td No
+                                else
+                                    td No
+                                    td !{elem.cur_reader}
+                                    td !{elem.return_date}
+        dialog(id="remove_dialog", class="remove")
+            div Delete book?
+                form(method="dialog")
+                    button(class="remove_dialog_button" onclick="delete_book(); return false;") Yes
+                    button(class="remove_dialog_button" onclick="close_dialog(); return false;") No
+
+script(type="text/javascript", src="/js/main.js")

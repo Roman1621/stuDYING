@@ -1,0 +1,96 @@
+.pfp_image{
+  width: auto;
+  height: 298px;
+  margin: 0;
+  padding: 0;
+}
+.return_to_main_page{
+  width: 600px;
+  height: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*border-width: 5px;*/
+  /*border-style: double;*/
+  /*border-color: rgba(0, 255, 255);*/
+  font-size: 32px;
+  font-style: italic;
+  border-radius: 5px;
+}
+p { margin:5px }
+.button_return{
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 255, 255);
+}
+.add_news{
+  width: 600px;
+  height: auto;
+  /*border-width: 5px;*/
+  /*border-style: double;*/
+  /*border-color: rgba(0, 255, 255);*/
+  font-style: italic;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.news_name_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.news_body_input{
+  width: 95%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.update_news_list{
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 255, 255);
+}
+.news{
+  width: 600px;
+  border-width: 5px;
+  border-style: double;
+  border-color: rgba(0, 255, 255);
+  font-style: italic;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+.news_table{
+  border-collapse: collapse;
+  width: 600px;
+}
+.news_table td{
+  border: 1px solid rgba(0, 255, 255);
+}

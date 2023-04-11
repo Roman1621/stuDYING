@@ -1,0 +1,110 @@
+table tr td.td2:last-child {
+  word-break: break-word;
+}
+.user_photo{
+  width: 600px;
+  height: 300px;
+  border-width: 5px;
+  border-style: double;
+  border-color: rgba(0, 255, 255);
+  font-size: 32px;
+  font-style: italic;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+}
+.pfp_image{
+  width: auto;
+  height: 298px;
+  margin: 0;
+  padding: 0;
+}
+.nav_button_news{
+  padding-top: 0;
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+}
+p { margin:5px }
+.nav_button_admin{
+  size: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.user_navigation{
+  width: 600px;
+  height: 100px;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*border-width: 5px;*/
+  /*border-style: double;*/
+  /*border-color: rgba(0, 255, 255);*/
+  font-size: 32px;
+  font-style: italic;
+  border-radius: 5px;
+}
+.user_info{
+  width: 600px;
+  border-width: 5px;
+  border-style: double;
+  border-color: rgba(0, 255, 255);
+  font-style: italic;
+  border-radius: 5px;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+.user_info_table{
+  border-collapse: collapse;
+  width: 100%;
+}
+.user_info_table td{
+  border: 1px solid rgba(0, 255, 255);
+}
+.photo_upload_button{
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  border: solid black 2px;
+  padding-left: 0.6vw;
+  padding-right: 0.6vw;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: rgba(0, 255, 255);
+}
+.photo_input_button{
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  left: 25%;
+  right: 25%;
+  font-size: 20px;
+}
+.photo_change_button{
+  width: 100%;
+}
+.user_photo_table{
+  border-collapse: collapse;
+}

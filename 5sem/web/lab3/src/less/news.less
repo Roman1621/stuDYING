@@ -1,0 +1,122 @@
+@backCol: rgba(0, 255, 255, 0.6);
+@backCol2: rgba(blue, 0.6);
+@borderCol: cornflowerblue;
+@backColDialog: rgba(0, 255, 255);
+@backColDialog2: blue;
+
+body{
+  //background-color: @backCol;
+  height: 100%;
+  background: linear-gradient(@backCol2, @backCol) no-repeat;
+  padding: 2.5%;
+  min-height: 100%;
+  min-width: 100%;
+}
+//.action_panel{
+//  .delete_button{
+//    width: 10%;
+//    height: 5%;
+//    border-width: 5px;
+//    border-style: double;
+//    border-color: @borderCol;
+//    background: @backCol;
+//  }
+//}
+.title_panel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 50%;
+  grid-template-rows: 20%;
+  grid-auto-columns: 25%;
+  border-width: 5px;
+  border-style: double;
+  border-color: @borderCol;
+  border-radius: 2px;
+  .title{
+    border-width: 5px;
+    border-style: double;
+    border-color: @borderCol;
+  }
+  .news_button{
+    align-items: center;
+    justify-content: center;
+    border-width: 5px;
+    border-style: double;
+    border-color: @borderCol;
+    .news_list{
+      background: @backCol;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      border-width: 5px;
+      border-style: double;
+      border-color: @borderCol;
+    }
+  }
+  .user_button{
+    align-items: center;
+    justify-content: center;
+    border-width: 5px;
+    border-style: double;
+    border-color: @borderCol;
+    .user_list{
+      background: @backCol;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      border-width: 5px;
+      border-style: double;
+      border-color: @borderCol;
+    }
+  }
+}
+.news_panel{
+  .news_table{
+    width: 100%;
+    border: 5px double cornflowerblue;
+    table-layout: fixed;
+    border-collapse: collapse;
+    justify-content: center;
+    td{
+      border: 2.5px solid @borderCol;
+      height: 10%;
+    }
+    .table_photo{
+      width: 10%;
+    }
+    .table_name{
+      width: 20%;
+    }
+    .table_date {
+      width: 10%;
+    }
+    .table_name_news{
+      width: 10%;
+    }
+    .table_news {
+      width: 50%;
+    }
+  }
+}
+//.delete_news{
+//  background: linear-gradient(@backColDialog2, @backColDialog) no-repeat;
+//  border-width: 5px;
+//  border-style: double;
+//  border-color: black;
+//  align-self: center;
+//  align-items: center;
+//  justify-content: center;
+//  font-size: 20px;
+//  padding-top: 5vh;
+//  position: fixed;
+//  top: 20vh;
+//  text-align: center;
+//  .delete_button{
+//    background-color: @backColDialog;
+//    border-width: 5px;
+//    border-style: double;
+//    border-color: black;
+//  }
+//}

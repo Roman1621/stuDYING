@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CW-game</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    </head>
+    <body>
+    <div id="root">
+        <h1>
+         <center><span style="color: white">SuperGame</span></center>
+        </h1>
+    </div>
+    <div class="table" align="center">
+        <table class="tableOfResults">
+            <caption>Record Table</caption>
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Игрок</th>
+                <th>Счет</th>
+            </tr>
+            </thead>
+            <tbody id="results">
+            </tbody>
+        </table>
+        <form name="input_window" id="input">
+            <p><b>Name:</b><br>
+                <input type="text" size="40" id = "playername"></p>
+            <button onclick="login(); return false ", id="start">Play</button>
+        </form>
+    </div>
+    </body>
+    <script type="text/javascript" src="/js/leader_board.js"></script>
+</html>

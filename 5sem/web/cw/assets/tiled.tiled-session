@@ -1,0 +1,111 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map2.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "map.tmx": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 0.2528385416666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1926.130394479349,
+                "y": 1281.4502008445772
+            }
+        },
+        "map1.json": {
+            "scale": 0.0867431640625,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": 2040.506614128905,
+                "y": 1273.8755980861242
+            }
+        },
+        "map2.tmx": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 0.29539062499999996,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 1049.4578153927532,
+                "y": 1283.046813012431
+            }
+        },
+        "tileMap.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tileMap.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesMap.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesMap.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesMapSecond.json": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tilesMapSecond.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "/home/roman/5sem/web/cw/assets",
+    "last.externalTilesetPath": "/home/roman/5sem/web/cw/assets",
+    "last.imagePath": "/home/roman/5sem/web/cw/assets",
+    "lastUsedTilesetExportFilter": "JSON файлы с наборами тайлов (*.tsj *.json)",
+    "map.lastUsedExportFilter": "JSON map-файлы (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 128,
+    "map.tileWidth": 128,
+    "map.width": 20,
+    "openFiles": [
+        "map.tmx",
+        "tilesMap.json",
+        "tilesMapSecond.json",
+        "tilesMap.tsx",
+        "tilesMapSecond.tsx",
+        "map2.tmx"
+    ],
+    "project": "tiled.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "map.tmx",
+        "tilesMap.json",
+        "tilesMapSecond.json",
+        "tilesMap.tsx",
+        "tilesMapSecond.tsx",
+        "map2.tmx",
+        "tileMap.tsx",
+        "tileMap.json",
+        "map1.json"
+    ],
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFilter": "Файлы набора тайлов Tiled (*.tsx *.xml)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 128,
+        "width": 128
+    },
+    "tileset.transparentColor": "#ff00ff",
+    "tileset.type": 0,
+    "tileset.useTransparentColor": false
+}

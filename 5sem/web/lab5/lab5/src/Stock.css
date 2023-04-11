@@ -1,0 +1,43 @@
+table {
+	margin-left: 1.5vw;
+	margin-top: 1vh;
+	width: 97vw;
+	border-collapse: collapse;
+	font-size: 3vh;
+}
+
+.stock_radiobox_th {
+	width: 2vw;
+}
+.stock_hist_button {
+	font-size: 2vh;
+	font-weight: bold;
+}
+
+.hist_dialog {
+	top: 5vh;
+	font-size: 2.5vh;
+}
+.hist_container {
+	margin: 0 0 0 0;
+	width: 90vw;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.hist_container_td {
+	border: none;
+}
+.hist_container_th {
+	border: none;
+}
+
+.hist_table {
+	margin-left: 0px;
+	width: 45vw;
+	font-size: 2vh;
+}
+.hist_graph {
+	width: 45vw;
+	height: 80vh;
+	background-color: #DDDDDD;
+}

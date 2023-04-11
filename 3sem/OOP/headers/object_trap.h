@@ -11,7 +11,6 @@ class Object_trap : public Object{
     
     public:
         Object_trap();
-        ~Object_trap();
         
 		virtual void add_object(Cell& holder);
 		virtual void player_pass(Player& player, Field& field);	
@@ -23,6 +22,10 @@ class Object_trap : public Object{
 
         void set_object_x(unsigned int trap_x);
         void set_object_y(unsigned int trap_y);
+
+        virtual std::string get_class_name();
+		virtual Byte_array save();
+		virtual void load(Byte_array& temp);
 };
 
 #endif

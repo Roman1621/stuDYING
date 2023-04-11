@@ -3,11 +3,13 @@
 
 #include <cstddef>
 #include "..//headers/cell.h"
+#include "save.h"
 
 class Enemy;
 
-class Field{
+class Field : public Save{
     public:
+        Field();
         Field(unsigned int x_weight, unsigned int y_height);
         Field(const Field& other);
         Field(Field&& other);
@@ -31,6 +33,10 @@ class Field{
         Cell& create_objects();
         void put_object(std::vector <Object*> objects);
         bool check_object(unsigned int x, unsigned int y);
+
+        virtual std::string get_class_name();
+		virtual Byte_array save();
+		virtual void load(Byte_array& temp);
 
     private:
         Cell** field = nullptr;

@@ -5,8 +5,10 @@
 #include "..//headers/player.h"
 #include "..//headers/cell_view.h"
 #include "..//headers/object.h"
+#include "class_creator.h"
+#include "save.h"
 
-class Cell{
+class Cell : public Save{
     private:
         Cell_objects* object_on_cell = nullptr;
         Cell_objects* enemy_on_cell = nullptr;
@@ -21,6 +23,7 @@ class Cell{
     public:
         Cell();
         ~Cell();
+        Cell& operator=(const Cell& other);
 
         unsigned int get_cell_x() const;
         unsigned int get_cell_y() const;
@@ -53,6 +56,10 @@ class Cell{
         void set_player(Cell_objects& player);
         bool pres_player();
         void del_player();
+
+        virtual std::string get_class_name();
+		virtual Byte_array save();
+		virtual void load(Byte_array& temp);
 };
 
 #endif

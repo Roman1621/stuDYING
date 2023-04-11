@@ -37,14 +37,26 @@ void Object_damage::init(){
     cell_view = new Cell_object_view('d', *this);
 }
 
-Object_damage::~Object_damage(){
-    if(cell_view)
-        delete cell_view;
-}
-
 void Object_damage::check_take(Field& field, std::vector <Object*>& objects, int i){
     if(!field.get_cell(damage_x, damage_y).pres_object())
 	{
 		objects.erase(objects.begin() + i);
 	}
+}
+
+std::string Object_damage::get_class_name(){
+    return "Object_damage";
+}
+
+Byte_array Object_damage::save(){
+    Byte_array ba = Object::save();
+    ba.put_object(damage_x);
+    ba.put_object(damage_y);
+    return ba;
+}
+
+void Object_damage::load(Byte_array& temp){
+    Object::load(temp);
+    temp.get_object(damage_x);
+    temp.get_object(damage_y);
 }

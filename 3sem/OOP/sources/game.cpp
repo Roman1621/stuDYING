@@ -10,18 +10,22 @@ void Game<win_rule_type, lose_rule_type, difficulty>::clear_screen(){
 
 template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
 void Game<win_rule_type, lose_rule_type, difficulty>::input(char user_input, Player& player, Field& field, const std::vector<Enemy*>& enemy){
-    if(user_input == 'q')
+    if(Bind::get_key("Exit") == user_input)
         return;
-    else if(user_input == 'w')
+    else if(Bind::get_key("Up") == user_input)
         player.move_up(field);
-    else if(user_input == 'd')
-            player.move_right(field);
-    else if(user_input == 's')
+    else if(Bind::get_key("Right") == user_input)
+        player.move_right(field);
+    else if(Bind::get_key("Down") == user_input)
         player.move_down(field);
-    else if(user_input == 'a')
+    else if(Bind::get_key("Left") == user_input)
         player.move_left(field);
-    else if(user_input == 'f')
+    else if(Bind::get_key("Fighting") == user_input)
         player.fighting(field);
+    else if(Bind::get_key("Save") == user_input)
+        save("Save_game");
+    else if(Bind::get_key("Load") == user_input)
+        load("Save_game");
 }
 
 template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
@@ -39,15 +43,15 @@ void Game<win_rule_type, lose_rule_type, difficulty>::update_screen(){
     Logger::init(Default, {file_window_out, cout_window});
     Logger::init(Console, {cout_window});
     Logger::init(File, {file_window_out});
-    Field_view print(*field);
+    print = new Field_view (*field);
 
-    int user_input = 0;
-    print.display();
-    user_input = fgetc(stdin);
-    input(user_input, player, *field, enemy);
+    char user_input = 0;
+    print->display();
+    user_input = input_ex.get_input();
+    input(user_input, *player, *field, enemy);
     clear_screen();
     while(1){
-        print.display();
+        print->display();
         if(win_rule.done()){
             std::cout << "EXIT!" << std::endl;
             return;
@@ -57,20 +61,20 @@ void Game<win_rule_type, lose_rule_type, difficulty>::update_screen(){
             return;
         }
 
-        for(int i = 0; i <object.size(); i++){
-            object.at(i)->player_pass(player, *field);
+        for(int i = 0; i < object.size(); i++){
+            object.at(i)->player_pass(*player, *field);
             object.at(i)->check_take(*field, object, i);
         }
 
         for(int i = 0; i < enemy.size(); i++){
-            enemy.at(i)->fighting(player, *field);
-            enemy.at(i)->move(player, *field);
+            enemy.at(i)->fighting(*player, *field);
+            enemy.at(i)->move(*player, *field);
             enemy.at(i)->check_death(*field, enemy, i);
         }
 
         Logger::logger_out(Default).display("");
-        user_input = fgetc(stdin);
-        input(user_input, player, *field, enemy);
+        user_input = input_ex.get_input();
+        input(user_input, *player, *field, enemy);
         clear_screen();
     }
     
@@ -95,7 +99,7 @@ Field& Game<win_rule_type, lose_rule_type, difficulty>::get_field(){
 
 template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
 Player& Game<win_rule_type, lose_rule_type, difficulty>::get_player(){
-    return player;
+    return *player;
 }
 
 template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
@@ -124,18 +128,76 @@ void Game<win_rule_type, lose_rule_type, difficulty>::on_start(){
         field = new Field((unsigned) 7,(unsigned) 7);
     }
 
-    std::vector <Object*> object;
     object.push_back(new Object_damage);
     object.push_back(new Object_heal);
     object.push_back(new Object_trap);
     add_enemy_on_field(enemy);
 
-    Cell& entrance = field->put_exit(2);
+    entrance = &field->put_exit(2);
     field->put_enemy(enemy);
     field->put_object(object);
 
-    player.set_player_x(entrance.get_cell_x());
-    player.set_player_y(entrance.get_cell_y());
-    field->get_cell(player.get_player_x(), player.get_player_y()).set_display('P');
-    entrance.set_player(player);
+    player = new Player;
+    player->set_player_x(entrance->get_cell_x());
+    player->set_player_y(entrance->get_cell_y());
+    field->get_cell(player->get_player_x(), player->get_player_y()).set_display('P');
+    entrance->set_player(*player);
+}
+
+template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
+void Game<win_rule_type, lose_rule_type, difficulty>::save(const char* save_name){
+    std::fstream fs;
+    fs.open(save_name, std::fstream::out | std::fstream::trunc);
+    
+    try{
+        Byte_array ba = field->save();
+        ba.write_out(fs);
+    }
+
+    catch(std::exception &e){
+        std::string message = e.what();
+        Logger::logger_out(Console).display(message);
+    }
+    fs.close();
+}
+
+template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
+void Game<win_rule_type, lose_rule_type, difficulty>::load(const char* load_name){
+    std::fstream fs;
+    fs.open(load_name,std::fstream::in);
+    Field* field_new;
+
+    try{
+        Byte_array ba;
+        ba.read_in(fs);
+        field_new = (Field*)Class_creator::get_object(ba);
+    }
+    catch(std::exception &e){
+        std::string message = e.what();
+        Logger::logger_out(Console).display(message);
+        return;
+    }
+    delete field;
+    field = field_new;
+    delete print;
+    print = new Field_view (*field);
+    win_rule.set_field(*field);
+    lose_rule.set_field(*field);
+    enemy.clear();
+    object.clear();
+    for(int x = 0; x < field->get_x(); x++){
+        for(int y = 0; y < field->get_y(); y++){
+            if(field->get_cell(x, y).pres_object()){
+                object.push_back((Object*) &field->get_cell(x, y).get_object());
+            }
+            if(field->get_cell(x, y).pres_player()){
+                player = (Player*) &field->get_cell(x, y).get_player();
+            }
+            if(field->get_cell(x, y).pres_enemy()){
+                enemy.push_back((Enemy*) &field->get_cell(x, y).get_enemy());
+            }
+        }
+    }
+    win_rule.set_player(*player);
+    lose_rule.set_player(*player);
 }

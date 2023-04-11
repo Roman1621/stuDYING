@@ -162,3 +162,28 @@ void Enemy_knight::check_death(Field& field, std::vector <Enemy*>& enemies, int 
     if(cell_view)
         delete cell_view;
 }*/
+
+std::string Enemy_knight::get_class_name(){
+    return "Enemy_knight";
+}
+
+Byte_array Enemy_knight::save(){
+    Byte_array ba = Enemy::save();
+    ba.put_object(health);
+    ba.put_object(damage);
+    ba.put_object(knight_x);
+    ba.put_object(knight_y);
+    ba.put_object(count_move);
+    ba.put_object(dir);
+    return ba;
+}
+
+void Enemy_knight::load(Byte_array& temp){
+    Enemy::load(temp);
+    temp.get_object(health);
+    temp.get_object(damage);
+    temp.get_object(knight_x);
+    temp.get_object(knight_y);
+    temp.get_object(count_move);
+    temp.get_object(dir);
+}

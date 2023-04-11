@@ -38,14 +38,28 @@ void Object_heal::init(){
     cell_view = new Cell_object_view('H', *this);
 }
 
-Object_heal::~Object_heal(){
-    if(cell_view)
-        delete cell_view;
-}
+
 
 void Object_heal::check_take(Field& field, std::vector <Object*>& objects, int i){
     if(!field.get_cell(get_object_x(), get_object_y()).pres_object())
 	{
 		objects.erase(objects.begin() + i);
 	}
+}
+
+std::string Object_heal::get_class_name(){
+    return "Object_heal";
+}
+
+Byte_array Object_heal::save(){
+    Byte_array ba = Object::save();
+    ba.put_object(heal_x);
+    ba.put_object(heal_y);
+    return ba;
+}
+
+void Object_heal::load(Byte_array& temp){
+    Object::load(temp);
+    temp.get_object(heal_x);
+    temp.get_object(heal_y);
 }

@@ -1,10 +1,10 @@
 #include "..//headers/game.h"
 #include "game.cpp"
-#include "exit_rule.cpp"
-#include "death_rule.cpp"
 
 int main(){
-    Game<Exit_rule<2>, Death_rule<2>, 2> game;
+    Class_creator::init();
+    Game<Exit_rule, Death_rule, 2> game;
+    Bind::init_bind();
     game.on_start();
     game.get_win_rule().set_field(game.get_field());
     game.get_win_rule().set_player(game.get_player());

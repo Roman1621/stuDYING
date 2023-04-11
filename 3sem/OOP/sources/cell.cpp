@@ -10,6 +10,19 @@ Cell::~Cell(){
     }
 }
 
+Cell& Cell::operator=(const Cell& other){
+    pass = other.pass;
+    exit = other.exit;
+    entrance = other.entrance;
+    display = other.display;
+    cell_x = other.cell_x;
+    cell_y = other.cell_y;
+    object_on_cell  =other.object_on_cell;
+    enemy_on_cell = other. enemy_on_cell;
+    player_on_cell = other.player_on_cell;
+    return *this;
+}
+
 unsigned int Cell::get_cell_x() const{
     return cell_x;
 }
@@ -104,4 +117,72 @@ void Cell::del_player(){
 
 bool Cell::pres_player(){
     return player_on_cell;
+}
+
+std::string Cell::get_class_name(){
+    return "Cell";
+}
+
+Byte_array Cell::save(){
+    Byte_array ba = Save::save();
+    ba.put_object(pass);
+    ba.put_object(entrance);
+    ba.put_object(exit);
+    ba.put_object(display);
+    ba.put_object(cell_x);
+    ba.put_object(cell_y);
+    bool has_object = pres_object(), has_enemy = pres_enemy(), has_player = pres_player();
+    ba.put_object(has_object);
+    ba.put_object(has_enemy);
+    ba.put_object(has_player);
+    if(has_object){
+        Byte_array o = object_on_cell->save();
+        ba += o;
+    }
+
+    if(has_enemy){
+        Byte_array o = enemy_on_cell->save();
+        ba += o;
+    }
+    
+    if(has_player){
+        Byte_array o = player_on_cell->save();
+        ba += o;
+    }
+
+    return ba;
+}
+
+void Cell::load(Byte_array& temp){
+    Save::load(temp);
+    temp.get_object(pass);
+    temp.get_object(entrance);
+    temp.get_object(exit);
+    temp.get_object(display);
+    temp.get_object(cell_x);
+    temp.get_object(cell_y);
+    bool has_object, has_enemy, has_player;
+    temp.get_object(has_object);
+    temp.get_object(has_enemy);
+    temp.get_object(has_player);
+    if(has_object){
+        object_on_cell = (Cell_objects*) Class_creator::get_object(temp);
+    }
+    else{
+        object_on_cell = nullptr;
+    }
+
+    if(has_enemy){
+        enemy_on_cell = (Cell_objects*) Class_creator::get_object(temp);
+    }
+    else{
+        enemy_on_cell = nullptr;
+    }
+
+    if(has_player){
+        player_on_cell = (Cell_objects*) Class_creator::get_object(temp);
+    }
+    else{
+        player_on_cell = nullptr;
+    }
 }

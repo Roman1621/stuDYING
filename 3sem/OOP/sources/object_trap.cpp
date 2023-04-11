@@ -4,10 +4,6 @@ Object_trap::Object_trap(){
     init();
 }
 
-Object_trap::~Object_trap(){
-    if(cell_view)
-        delete cell_view;
-}
 
 unsigned int Object_trap::get_object_x() const{
     return trap_x;
@@ -51,4 +47,21 @@ void Object_trap::check_take(Field& field, std::vector <Object*>& objects, int i
 	{
 		objects.erase(objects.begin() + i);
 	}
+}
+
+std::string Object_trap::get_class_name(){
+    return "Object_trap";
+}
+
+Byte_array Object_trap::save(){
+    Byte_array ba = Object::save();
+    ba.put_object(trap_x);
+    ba.put_object(trap_y);
+    return ba;
+}
+
+void Object_trap::load(Byte_array& temp){
+    Object::load(temp);
+    temp.get_object(trap_x);
+    temp.get_object(trap_y);
 }

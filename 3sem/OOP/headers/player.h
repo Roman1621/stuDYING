@@ -39,6 +39,10 @@ class Player : public Cell_objects{
         virtual void init();
 
         friend std::ostream& operator<<(std::ostream& ostr, const Player& player);
+
+        virtual std::string get_class_name();
+		virtual Byte_array save();
+		virtual void load(Byte_array& temp);
 };
 
 std::ostream& operator<<(std::ostream& ostr, const Player& player);

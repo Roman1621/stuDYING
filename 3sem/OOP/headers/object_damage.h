@@ -11,7 +11,6 @@ class Object_damage : public Object{
     
     public:
         Object_damage();
-        ~Object_damage();
         
 		virtual void add_object(Cell& holder);
 		virtual void player_pass(Player& player, Field& field);	
@@ -23,6 +22,10 @@ class Object_damage : public Object{
 
         void set_object_x(unsigned int damage_x);
         void set_object_y(unsigned int damage_y);
+        
+        virtual std::string get_class_name();
+		virtual Byte_array save();
+		virtual void load(Byte_array& temp);
 };
 
 #endif

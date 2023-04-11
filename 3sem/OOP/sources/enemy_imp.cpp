@@ -79,3 +79,24 @@ void Enemy_imp::init(){
     if(cell_view)
         delete cell_view;
 }*/
+
+std::string Enemy_imp::get_class_name(){
+    return "Enemy_imp";
+}
+
+Byte_array Enemy_imp::save(){
+    Byte_array ba = Enemy::save();
+    ba.put_object(health);
+    ba.put_object(damage);
+    ba.put_object(imp_x);
+    ba.put_object(imp_y);
+    return ba;
+}
+
+void Enemy_imp::load(Byte_array& temp){
+    Enemy::load(temp);
+    temp.get_object(health);
+    temp.get_object(damage);
+    temp.get_object(imp_x);
+    temp.get_object(imp_y);
+}

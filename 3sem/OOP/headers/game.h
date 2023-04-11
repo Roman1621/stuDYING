@@ -15,12 +15,12 @@
 #include "logger.h"
 #include "exit_rule.h"
 #include "death_rule.h"
+#include "input.h"
 
 template <typename win_rule_type, typename lose_rule_type, size_t difficulty>
 class Game{
     public:
         ~Game();
-       // Game(Game_rule& win, Game_rule& lose);
         void clear_screen();
         void on_start();
 
@@ -33,13 +33,20 @@ class Game{
         Player& get_player();
         win_rule_type& get_win_rule();
         lose_rule_type& get_lose_rule();
+
+        void save(const char* save_name);
+        void load(const char* load_name);
+
     private:
         win_rule_type win_rule;
         lose_rule_type lose_rule;
         std::vector<Enemy*> enemy;
         std::vector<Object*> object;
         Field* field;
-        Player player;
+        Player* player;
+        Input input_ex;
+        Field_view* print;
+        Cell* entrance;
 };
 
 #endif

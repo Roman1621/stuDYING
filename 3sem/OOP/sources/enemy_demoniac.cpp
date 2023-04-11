@@ -153,3 +153,27 @@ void Enemy_demoniac::check_death(Field& field, std::vector <Enemy*>& enemies, in
     }
 }
 
+std::string Enemy_demoniac::get_class_name(){
+    return "Enemy_demoniac";
+}
+
+Byte_array Enemy_demoniac::save(){
+    Byte_array ba = Enemy::save();
+    ba.put_object(health);
+    ba.put_object(damage);
+    ba.put_object(demoniac_x);
+    ba.put_object(demoniac_y);
+    ba.put_object(count_move);
+    ba.put_object(dir);
+    return ba;
+}
+
+void Enemy_demoniac::load(Byte_array& temp){
+    Enemy::load(temp);
+    temp.get_object(health);
+    temp.get_object(damage);
+    temp.get_object(demoniac_x);
+    temp.get_object(demoniac_y);
+    temp.get_object(count_move);
+    temp.get_object(dir);
+}

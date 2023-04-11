@@ -2,12 +2,13 @@
 #define CELL_OBJECTS_H
 
 #include "..//headers/cell_object_view.h"
+#include "save.h"
 
 class Cell;
 class Player;
 class Field;
 
-class Cell_objects{
+class Cell_objects : public Save{
     public:
         virtual void init() = 0;
         virtual Cell_object_view& get();

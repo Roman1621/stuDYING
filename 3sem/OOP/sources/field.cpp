@@ -3,6 +3,8 @@
 #include <random>
 #include <tuple>
 
+Field::Field(){}
+
 Field::Field(unsigned int x_weight, unsigned int y_height){
     this->field_x = x_weight + 2;
     this->field_y = y_height + 2;
@@ -239,4 +241,50 @@ bool Field::check_object(unsigned int x, unsigned int y){
     || field[y][x-1].pres_enemy() || field[y+1][x+1].pres_enemy()
     || field[y-1][x].pres_enemy() || field[y+1][x-1].pres_enemy()
     || field[y-1][x+1].pres_enemy() || field[y-1][x-1].pres_enemy());
+}
+
+std::string Field::get_class_name(){
+    return "Field";
+}
+
+Byte_array Field::save(){
+    Byte_array ba = Save::save();
+    ba.put_object(field_x);
+    ba.put_object(field_y);
+    ba.put_object(entrance_x);
+    ba.put_object(entrance_y);
+    ba.put_object(exit_x);
+    ba.put_object(exit_y);
+    for(int x = 0; x < field_x; x++){
+        for(int y = 0; y < field_y; y++){
+            Byte_array c = get_cell(x, y).save();
+            ba += c;
+        }
+    }
+    return ba;
+}
+
+void Field::load(Byte_array& temp){
+    Save::load(temp);
+    temp.get_object(field_x);
+    temp.get_object(field_y);
+    temp.get_object(entrance_x);
+    temp.get_object(entrance_y);
+    temp.get_object(exit_x);
+    temp.get_object(exit_y);
+    if(field){
+        for (int j = 0; j < field_y; j++) delete[] field[j];
+        delete[] field;
+    }
+
+    field = new Cell*[field_y];
+    for (int j = 0; j < field_y; j++) field[j] = new Cell[field_x];
+        
+    for(int x = 0; x < field_x; x++){
+        for(int y = 0; y < field_y; y++){
+            Cell* c = (Cell*)Class_creator::get_object(temp);
+            field[y][x] = *c;
+            delete c;
+        }
+    }
 }

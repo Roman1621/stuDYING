@@ -136,3 +136,24 @@ std::ostream& operator<<(std::ostream& ostr, const Player& player){
     << " Pos_Player_Y: " << player.get_player_y();
     return ostr;
 }
+
+std::string Player::get_class_name(){
+    return "Player";
+}
+
+Byte_array Player::save(){
+    Byte_array ba = Cell_objects::save();
+    ba.put_object(health);
+    ba.put_object(damage);
+    ba.put_object(player_x);
+    ba.put_object(player_y);
+    return ba;
+}
+
+void Player::load(Byte_array& temp){
+    Cell_objects::load(temp);
+    temp.get_object(health);
+    temp.get_object(damage);
+    temp.get_object(player_x);
+    temp.get_object(player_y);
+}
